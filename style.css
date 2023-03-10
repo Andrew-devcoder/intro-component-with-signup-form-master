@@ -167,6 +167,7 @@ h6 {
 
 input {
   padding: 1rem 2rem;
+  font-size: 0.7rem;
   font-weight: 800;
   color: hsl(249, 10%, 26%);
   border: 1px solid hsl(246, 25%, 77%);
@@ -175,6 +176,8 @@ input {
 
 button {
   padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
   text-transform: uppercase;
   color: white;
   background-color: hsl(154, 59%, 51%);

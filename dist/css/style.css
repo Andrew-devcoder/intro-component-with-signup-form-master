@@ -156,6 +156,11 @@ h6 {
 .form__body p {
   text-align: center;
   font-size: 0.6rem;
+  color: hsl(246, 25%, 77%);
+}
+.form__body p a {
+  font-weight: 600;
+  color: red;
 }
 
 input {

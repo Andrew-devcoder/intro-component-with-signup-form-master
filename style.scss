@@ -170,6 +170,12 @@ h6 {
         & p {
             text-align: center;
             font-size: 0.6rem;
+            color: hsl(246, 25%, 77%);
+
+            & a {
+                font-weight: 600;
+                color: red;
+            }
         }
     }
 }

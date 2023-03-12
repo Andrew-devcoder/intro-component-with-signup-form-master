@@ -62,8 +62,8 @@ app.post("/send_email", (req, response) => {
     });
 })
 
-server.listen(port, function () {
-    console.log("port: " + port)
-})
+// server.listen(port, function () {
+//     console.log("port: " + port)
+// })
 
 // ohfbxqcoqrhpvzmh

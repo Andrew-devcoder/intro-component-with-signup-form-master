@@ -3,6 +3,8 @@ var http = require('http');
 var path = require('path');
 var nodemailer = require('nodemailer');
 
+const bodyParser = require('body-parser');
+
 var app = express();
 // var server = http.Server(app);
 // var port = 500;
@@ -11,6 +13,7 @@ var port = process.env.PORT || 5000
 // app.set("port", port);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.static(path.join(__dirname, "/index.html")));
 
 // app.get('/', function (req, response) {
@@ -18,10 +21,10 @@ app.use(express.urlencoded({ extended: true }));
 // })
 
 app.post("/send_email", (req, response) => {
-    // var name = req.body.name;
-    // var lastName = req.body.lastName;
-    // var email = req.body.email;
-    // var password = req.body.password;
+    var name = req.body.name;
+    var lastName = req.body.lastName;
+    var email = req.body.email;
+    var password = req.body.password;
     const { name, lastName, email, password } = req.body;
     sendEmail(name, lastName, email, password);
     res.sendStatus(200);

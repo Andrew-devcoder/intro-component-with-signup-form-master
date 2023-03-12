@@ -1,11 +1,11 @@
-require('dotenv').config();
+require("dotenv").config();
 
-var express = require('express');
-var http = require('http');
-var path = require('path');
-var nodemailer = require('nodemailer');
+var express = require("express");
+var http = require("http");
+var path = require("path");
+var nodemailer = require("nodemailer");
 
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 const myEmail = process.env.MY_EMAIL_ADDRESS;
 const myPass = process.env.MY_PASSWORD;
 
@@ -20,9 +20,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "/index.html")));
 
-app.get('/', function (req, response) {
-    response.sendFile(path.join(__dirname, "/index.html"))
-})
+app.get("/", function (req, response) {
+    response.sendFile(path.join(__dirname, "/index.html"));
+});
 
 app.post("/send_email", (req, response) => {
     var name = req.body.name;
@@ -38,39 +38,42 @@ app.post("/send_email", (req, response) => {
     // });
 
     var transporter = nodemailer.createTransport({
-        service: 'gmail',
+        service: "gmail",
         auth: {
             user: myEmail,
             pass: myPass,
-        }
+        },
     });
 
     var infoUser = {
         name: name,
         lastName: lastName,
         email: email,
-        password: password
-    }
+        password: password,
+    };
 
     var mailOptions = {
-        from: 'andrey.kovpak.01@gmail.com',
-        to: 'andrey.kovpak.01@icloud.com',
+        from: "andrey.kovpak.01@gmail.com",
+        to: "andrey.kovpak.01@icloud.com",
         subject: name,
-        text: `Name: ${name}\nLast Name: ${lastName}\nEmail: ${email}\nPasssword: ${password}`
-    }
+        text: `Name: ${name}\nLast Name: ${lastName}\nEmail: ${email}\nPasssword: ${password}`,
+    };
 
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
-            console.log(error)
+            console.log(error);
         } else {
-            console.log("message sent" + info.response)
+            console.log("message sent" + info.response);
         }
-        response.redirect("/")
+        response.redirect("/");
     });
-})
+});
 
 server.listen(port, function () {
-    console.log("port: " + port)
-})
+    console.log("port: " + port);
+});
 
 // ohfbxqcoqrhpvzmh
+
+// MY_EMAIL_ADDRESS=andrey.kovpak.01@gmail.com
+// MY_PASSWORD=ohfbxqcoqrhpvzmh

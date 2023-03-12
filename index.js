@@ -1,43 +1,47 @@
+require('dotenv').config();
+
 var express = require('express');
 var http = require('http');
 var path = require('path');
 var nodemailer = require('nodemailer');
 
 const bodyParser = require('body-parser');
+const myEmail = process.env.MY_EMAIL_ADDRESS;
+const myPass = process.env.MY_PASSWORD;
 
 var app = express();
-// var server = http.Server(app);
-// var port = 500;
-var port = process.env.PORT || 5000
+var server = http.Server(app);
+var port = 500;
+// var port = process.env.PORT || 5000;
 
-// app.set("port", port);
+app.set("port", port);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(express.static(path.join(__dirname, "/index.html")));
+app.use(express.static(path.join(__dirname, "/index.html")));
 
-// app.get('/', function (req, response) {
-//     response.sendFile(path.join(__dirname, "/index.html"))
-// })
+app.get('/', function (req, response) {
+    response.sendFile(path.join(__dirname, "/index.html"))
+})
 
 app.post("/send_email", (req, response) => {
     var name = req.body.name;
     var lastName = req.body.lastName;
     var email = req.body.email;
     var password = req.body.password;
-    const { name, lastName, email, password } = req.body;
+    // const { name, lastName, email, password } = req.body;
     sendEmail(name, lastName, email, password);
     res.sendStatus(200);
 
-    app.listen(port, () => {
-        console.log(`Server is running on port ${port}`);
-    });
+    // app.listen(port, () => {
+    //     console.log(`Server is running on port ${port}`);
+    // });
 
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'andrey.kovpak.01@gmail.com',
-            pass: 'ohfbxqcoqrhpvzmh',
+            user: myEmail,
+            pass: myPass,
         }
     });
 

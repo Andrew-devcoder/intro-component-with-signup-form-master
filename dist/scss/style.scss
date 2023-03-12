@@ -247,7 +247,9 @@ input {
         font-size: 0.9rem;
     }
 
-    &:focus {
+    &:focus,
+    &:hover {
+        border: 1px solid hsla(240, 3%, 85%, 0);
         box-shadow: 0 0 15px hsl(240, 3%, 85%);
     }
 }

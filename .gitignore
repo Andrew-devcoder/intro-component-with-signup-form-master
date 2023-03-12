@@ -20,6 +20,8 @@
 node_modules/
 # dont commit folder node modules
 
+*.env
+
 
 # instal npm
 # npm i express

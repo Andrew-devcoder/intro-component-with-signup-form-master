@@ -74,6 +74,3 @@ server.listen(port, function () {
 });
 
 // ohfbxqcoqrhpvzmh
-
-// MY_EMAIL_ADDRESS=andrey.kovpak.01@gmail.com
-// MY_PASSWORD=ohfbxqcoqrhpvzmh

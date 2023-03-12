@@ -20,7 +20,7 @@
 node_modules/
 # dont commit folder node modules
 
-*.env
+# *.env
 
 
 # instal npm

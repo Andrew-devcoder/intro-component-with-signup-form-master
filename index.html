@@ -31,8 +31,16 @@
         </style>
     </head>
     <body>
-        <img class="background-desktop" src="./images/bg-intro-desktop.png" alt="" />
-        <img class="background-mobile" src="./images/bg-intro-mobile.png" alt="" />
+        <img
+            class="background-desktop"
+            src="./images/bg-intro-desktop.png"
+            alt=""
+        />
+        <img
+            class="background-mobile"
+            src="./images/bg-intro-mobile.png"
+            alt=""
+        />
         <div class="container">
             <div class="content">
                 <div class="content__title">
@@ -48,11 +56,40 @@
                 <div class="form__title">
                     <span> Try it free 7 days </span> then $20/mo. thereafter
                 </div>
-                <form id="form" class="form__body" action="/send_email" method="post">
-                    <input id="name" name="name" type="text" placeholder="First Name" required />
-                    <input id="lastName" name="lastName" type="text" placeholder="Last Name" required />
-                    <input id="email" name="email" type="email" placeholder="Email Address" required />
-                    <input id="password" name="password" type="password" placeholder="Password " required />
+                <form
+                    id="form"
+                    class="form__body"
+                    action="/send_email"
+                    method="POST"
+                >
+                    <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        placeholder="First Name"
+                        required
+                    />
+                    <input
+                        id="lastName"
+                        name="lastName"
+                        type="text"
+                        placeholder="Last Name"
+                        required
+                    />
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="Email Address"
+                        required
+                    />
+                    <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        placeholder="Password "
+                        required
+                    />
                     <button type="submit">Claim your free trial</button>
                     <p>
                         By clicking the button, you are agreeing to our

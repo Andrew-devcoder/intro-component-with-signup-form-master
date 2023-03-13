@@ -54,7 +54,7 @@ validation
         {
             rule: 'function',
             validator: function () {
-                const phone = telSelector.inputmask.unmaskedvalue();
+                const phone = myInput.inputmask.unmaskedvalue();
                 return phone.length === 10;
             },
         },

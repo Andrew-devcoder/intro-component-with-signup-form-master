@@ -1,5 +1,3 @@
-// require('dotenv').config();
-
 console.log('Init!');
 
 const form = document.querySelector('form');
@@ -22,7 +20,6 @@ validation
         {
             rule: 'required',
             value: true,
-            errorMessage: '!',
         },
     ])
     .addField('#lastName', [
@@ -37,26 +34,22 @@ validation
         {
             rule: 'required',
             value: true,
-            errorMessage: '!',
         },
     ])
     .addField('#email', [
         {
             rule: 'required',
             value: true,
-            errorMessage: '!',
         },
         {
             rule: 'email',
             value: true,
-            errorMessage: '!',
         },
     ])
     .addField('#tel', [
         {
             rule: 'required',
             value: true,
-            errorMessage: '!',
         },
         {
             rule: 'function',
@@ -64,14 +57,16 @@ validation
                 const phone = telSelector.inputmask.unmaskedvalue();
                 return phone.length === 10;
             },
-            errorMessage: '!',
+        },
+        {
+            rule: 'minLength',
+            value: 10,
         },
     ])
     .addField('#password', [
         {
             rule: 'required',
             value: true,
-            errorMessage: '!',
         },
     ])
     .onSuccess((event) => {

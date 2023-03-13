@@ -1,0 +1,17 @@
+{
+    "name": "vendor/form",
+    "autoload": {
+        "psr-4": {
+            "Vendor\\Form\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Andrew-devcoder",
+            "email": "andrey.kovpak.01@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
+}

@@ -37,15 +37,15 @@ try {
 
   // setting my mail
   $mail->Host       = 'smtp.gmail.com'; 
-  $mail->Username   = getenv('SMTP_MAIL');
-  $mail->Password   = getenv('SMTP_PASSWORD');
+  $mail->Username   = 'andrey.kovpak.01@gmail.com'; // getenv('SMTP_MAIL');
+  $mail->Password   = 'ldynqjibtgvofnin'; // getenv('SMTP_PASSWORD');
   $mail->SMTPSecure = 'ssl';
   $mail->Port       = 465;
 
-  $mail->setFrom(getenv('SMTP_SENDMAIL'), 'send my mail'); // Sender's name
+  $mail->setFrom('andrey.kovpak.01@gmail.com', 'send my mail'); // Sender's name (getenv('SMTP_SENDMAIL')
 
   // The person who receives the email.
-  $mail->addAddress(getenv('SMTP_TAKEMAIL'));
+  $mail->addAddress('andrey.kovpak.01@gmail.com'); //getenv('SMTP_TAKEMAIL'));
 
   // files
   // if (!empty($file['name'][0])) {

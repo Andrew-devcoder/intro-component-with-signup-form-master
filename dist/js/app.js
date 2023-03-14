@@ -74,6 +74,11 @@ validation
 
         let formData = new FormData(event.target);
 
+        //
+        formData.append('name', document.getElementById('name').value);
+        formData.append('email', document.getElementById('email').value);
+        //
+
         console.log(...formData);
 
         let xhr = new XMLHttpRequest();

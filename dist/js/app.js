@@ -1,9 +1,9 @@
 console.log('Init!');
 
 const form = document.querySelector('form');
-const myInput = form.querySelector('input[type="tel"]');
+const telSelector = form.querySelector('input[type="tel"]');
 const inputMask = new Inputmask('+38 (999) 999-99-99');
-inputMask.mask(myInput);
+inputMask.mask(telSelector);
 
 const validation = new JustValidate('.form');
 
@@ -54,7 +54,7 @@ validation
         {
             rule: 'function',
             validator: function () {
-                const phone = myInput.inputmask.unmaskedvalue();
+                const phone = telSelector.inputmask.unmaskedvalue();
                 return phone.length === 10;
             },
         },

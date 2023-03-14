@@ -20,13 +20,8 @@
 node_modules/
 # dont commit folder node modules
 
-*.env
-.env
+# *.env
+# .env
 
 
-# instal npm
-# npm i express
-# npm i path
-# npm i nodemailer
-# npm install dotenv
 /vendor/
